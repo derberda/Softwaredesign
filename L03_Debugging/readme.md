@@ -14,7 +14,7 @@ startet den Debugger und seht Euch den Inhalt von `root` im Debugger an.
 > ## Antwort
 > jüngste Person im Stammbaum: Willi Cambridge -
 >| Mom        | Dad           |
->| ------------- |-------------:|
+>| ------------- |-------------|
 >| Diana Spancer     | Charlie Wales |
 
 > Die Eltern von Diana Spencer
