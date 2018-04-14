@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\Afg\\AFG1.1\\AFG1.1.csproj",
-      "projectName": "AFG1.1",
-      "projectPath": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\Afg\\AFG1.1\\AFG1.1.csproj",
+      "projectUniqueName": "C:\\Users\\Berdan Der\\Desktop\\L03_Debugging\\Debugging.csproj",
+      "projectName": "Debugging",
+      "projectPath": "C:\\Users\\Berdan Der\\Desktop\\L03_Debugging\\Debugging.csproj",
       "packagesPath": "C:\\Users\\Berdan Der\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\Afg\\AFG1.1\\obj\\",
+      "outputPath": "C:\\Users\\Berdan Der\\Desktop\\L03_Debugging\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

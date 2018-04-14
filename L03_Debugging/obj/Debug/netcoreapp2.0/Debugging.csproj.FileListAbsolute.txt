@@ -1,0 +1,10 @@
+C:\Users\Berdan Der\Desktop\L03_Debugging\bin\Debug\netcoreapp2.0\Debugging.deps.json
+C:\Users\Berdan Der\Desktop\L03_Debugging\bin\Debug\netcoreapp2.0\Debugging.runtimeconfig.json
+C:\Users\Berdan Der\Desktop\L03_Debugging\bin\Debug\netcoreapp2.0\Debugging.runtimeconfig.dev.json
+C:\Users\Berdan Der\Desktop\L03_Debugging\bin\Debug\netcoreapp2.0\Debugging.dll
+C:\Users\Berdan Der\Desktop\L03_Debugging\bin\Debug\netcoreapp2.0\Debugging.pdb
+C:\Users\Berdan Der\Desktop\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Desktop\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Desktop\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.AssemblyInfo.cs
+C:\Users\Berdan Der\Desktop\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.dll
+C:\Users\Berdan Der\Desktop\L03_Debugging\obj\Debug\netcoreapp2.0\Debugging.pdb
