@@ -14,37 +14,37 @@ startet den Debugger und seht Euch den Inhalt von `root` im Debugger an.
 > ## Antwort
 > jüngste Person im Stammbaum: Willi Cambridge -
 >| Mom        | Dad           |
->| ------------- |:-------------|
+>| ------------- |-------------:|
 >| Diana Spancer     | Charlie Wales |
 
 > Die Eltern von Diana Spencer
 >| Mom        | Dad           |
->| ------------- |:-------------|
+>| ------------- |-------------:|
 >| Franzi Roche    | Eddie Spencer |
 
 > Die Eltern von Charlie Wales
 >| Mom        | Dad           |
->| ------------- |:-------------|
+>| ------------- |-------------:|
 >| Else Windsor   | Phillip Battenberg |
 
 > Die Eltern von Franzi Roche
 >| Mom        | Dad           |
->| ------------- |:-------------|
+>| ------------- |-------------:|
 >| Ruth Gill   | Moritz Roche |
 
 > Die Eltern von Eddie Spencer
 >| Mom        | Dad           |
->| ------------- |:-------------|
+>| ------------- |-------------:|
 >| Cynthia Hamilton   | Albert Spencer |
 
 > Die Eltern von Else windsor
 >| Mom        | Dad           |
->| ------------- |:------------:|
+>| ------------- |-------------:|
 >| Lisbeth Bowes-Lyon  | Schorsch-Albert York |
 
 > Die Eltern von Phillip Battenberg
 >| Mom        | Dad           |
->| ------------- |:-------------|
+>| ------------- |-------------:|
 >| Alice Battenberg  | Andi ElGreco |
 
 >Familien-Stammbaum hört bei `null` auf
