@@ -9,7 +9,8 @@ namespace L04_Zahlensysteme
             // Console.WriteLine(toHexal(Convert.ToInt32(args[0])));
             // Console.WriteLine(toDecimal(Convert.ToInt32(args[0])));
             // Console.WriteLine(ConvertToBaseFromDecimal(Convert.ToInt32(args[0]),Convert.ToInt32(args[1])));
-            Console.WriteLine(ConvertToDecimalFromBase(Convert.ToInt32(args[0]),Convert.ToInt32(args[1])));
+            // Console.WriteLine(ConvertToDecimalFromBase(Convert.ToInt32(args[0]),Convert.ToInt32(args[1])));
+            Console.WriteLine(ConvertNumberToBaseFromBase(Convert.ToInt32(args[0]),Convert.ToInt32(args[1]),Convert.ToInt32(args[2])));
         }
         public static int toHexal(int value)
         {
@@ -117,7 +118,50 @@ namespace L04_Zahlensysteme
                 }
             return sum;
         }
-        
+        public static int ConvertNumberToBaseFromBase(int value, int toBase, int fromBase)
+        {
+            int a = Math.Abs(value);
+            int length = a.ToString().Length;
+            int[] array = new int[length];
+            int[] newArray = new int[length];
+            int sum = 0;
+            for (int i = 0; i < length; i++)
+            {
+                array[i] = a % 10;
+                a /= 10;
+                newArray[i] += array[i]*Convert.ToInt32(Math.Pow(fromBase,i));
+                // Console.WriteLine(newArray[i]);
+
+                
+              
+            }
+              for(int x = 0;x<newArray.Length;x++)
+                {
+                    sum += newArray[x];
+                }
+            //return sum;
+            Console.WriteLine(sum);
+
+            //Code teil2
+            int newValue = sum/toBase;
+            int[] arr = new int[4];
+           
+                
+                
+                for(int i=0;i<=sum.ToString().Length+2;i++)
+                {
+                    newValue = sum/toBase;
+                    int rest = sum%toBase;
+                    
+                    arr[i] = rest;
+                    sum = newValue;
+                }
+                Array.Reverse(arr);
+                int newArray2 = Convert.ToInt32(string.Join("",arr));
+               
+            return newArray2;
+            
+        }
     }
 }
 
