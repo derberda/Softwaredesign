@@ -1,0 +1,10 @@
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L04_Zahlensysteme\obj\Debug\netcoreapp2.0\L04_Zahlensysteme.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L04_Zahlensysteme\obj\Debug\netcoreapp2.0\L04_Zahlensysteme.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L04_Zahlensysteme\obj\Debug\netcoreapp2.0\L04_Zahlensysteme.AssemblyInfo.cs
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L04_Zahlensysteme\bin\Debug\netcoreapp2.0\L04_Zahlensysteme.deps.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L04_Zahlensysteme\bin\Debug\netcoreapp2.0\L04_Zahlensysteme.runtimeconfig.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L04_Zahlensysteme\bin\Debug\netcoreapp2.0\L04_Zahlensysteme.runtimeconfig.dev.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L04_Zahlensysteme\bin\Debug\netcoreapp2.0\L04_Zahlensysteme.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L04_Zahlensysteme\bin\Debug\netcoreapp2.0\L04_Zahlensysteme.pdb
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L04_Zahlensysteme\obj\Debug\netcoreapp2.0\L04_Zahlensysteme.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L04_Zahlensysteme\obj\Debug\netcoreapp2.0\L04_Zahlensysteme.pdb
