@@ -7,7 +7,9 @@ namespace L04_Zahlensysteme
         static void Main(string[] args)
         {
             // Console.WriteLine(toHexal(Convert.ToInt32(args[0])));
-            Console.WriteLine(toDecimal(Convert.ToInt32(args[0])));
+            // Console.WriteLine(toDecimal(Convert.ToInt32(args[0])));
+            // Console.WriteLine(ConvertToBaseFromDecimal(Convert.ToInt32(args[0]),Convert.ToInt32(args[1])));
+            Console.WriteLine(ConvertToDecimalFromBase(Convert.ToInt32(args[0]),Convert.ToInt32(args[1])));
         }
         public static int toHexal(int value)
         {
@@ -72,6 +74,50 @@ namespace L04_Zahlensysteme
             // int result = Convert.ToInt32(decima);
             return sum;
         }
+         public static int ConvertToBaseFromDecimal(int toBase, int value)
+        {
+            int newValue = value/toBase;
+            int[] arr = new int[4];
+           
+                
+                
+                for(int i=0;i<=value.ToString().Length+2;i++)
+                {
+                    newValue = value/toBase;
+                    int rest = value%toBase;
+                    
+                    arr[i] = rest;
+                    value = newValue;
+                }
+                Array.Reverse(arr);
+                int newArray = Convert.ToInt32(string.Join("",arr));
+               
+            return newArray;
+        }
+        public static int ConvertToDecimalFromBase(int fromBase, int value)
+        {
+            int a = Math.Abs(value);
+            int length = a.ToString().Length;
+            int[] array = new int[length];
+            int[] newArray = new int[length];
+            int sum = 0;
+            for (int i = 0; i < length; i++)
+            {
+                array[i] = a % 10;
+                a /= 10;
+                newArray[i] += array[i]*Convert.ToInt32(Math.Pow(fromBase,i));
+                // Console.WriteLine(newArray[i]);
+
+                
+              
+            }
+              for(int x = 0;x<newArray.Length;x++)
+                {
+                    sum += newArray[x];
+                }
+            return sum;
+        }
+        
     }
 }
 
