@@ -16,19 +16,7 @@ namespace L04_Zahlensysteme
         {
             if (dec >= 0 && dec <= 1023)
             {
-                int newValue = dec / 6;
-                int[] arr = new int[4];
-                for (int i = 0; i <= dec.ToString().Length + 2; i++)
-                {
-                    newValue = dec / 6;
-                    int rest = dec % 6;
-                    arr[i] = rest;
-                    dec = newValue;
-                }
-                Array.Reverse(arr);
-                int newArray = Convert.ToInt32(string.Join("", arr));
-
-                return newArray;
+                return ConvertToBaseFromDecimal(6, dec);
             }
             else
             {
@@ -37,23 +25,8 @@ namespace L04_Zahlensysteme
 
         }
         public static int ConvertHexalToDezimal(int hexal)
-        {
-            int a = Math.Abs(hexal);
-            int length = a.ToString().Length;
-            int[] array = new int[length];
-            int[] newArray = new int[length];
-            int sum = 0;
-            for (int i = 0; i < length; i++)
-            {
-                array[i] = a % 10;
-                a /= 10;
-                newArray[i] += array[i] * Convert.ToInt32(Math.Pow(6, i));
-            }
-            for (int x = 0; x < newArray.Length; x++)
-            {
-                sum += newArray[x];
-            }
-            return sum;
+        { 
+            return ConvertToDecimalFromBase(6, hexal);
         }
         public static int ConvertToBaseFromDecimal(int toBase, int number)
         {
