@@ -26,29 +26,29 @@ namespace AFG1._2
         public static void GetVerse()
         {
             Random random = new Random();
-            int a = random.Next(0, subjects.Length);
-            int b = random.Next(0, verbs.Length);
-            int c = random.Next(0, objects.Length);
+            int randomSubject = random.Next(0, subjects.Length);
+            int randomVerb = random.Next(0, verbs.Length);
+            int randomObject = random.Next(0, objects.Length);
             
-            while (subjects[a] == "used")
+            while (subjects[randomSubject] == "used")
             {
-                a = random.Next(0, subjects.Length);
+                randomSubject = random.Next(0, subjects.Length);
             }
-            while (verbs[b] == "used")
+            while (verbs[randomVerb] == "used")
             {
-                b = random.Next(0, verbs.Length);
+                randomVerb = random.Next(0, verbs.Length);
             }
-            while (objects[c] == "used")
+            while (objects[randomObject] == "used")
             {
-                c = random.Next(0, objects.Length);
+                randomObject = random.Next(0, objects.Length);
             }
-            Subject = subjects[a];
-            Verb = verbs[b];
-            Object = objects[c];
+            Subject = subjects[randomSubject];
+            Verb = verbs[randomVerb];
+            Object = objects[randomObject];
 
-            subjects[a] = "used";
-            verbs[b] = "used";
-            objects[c] = "used";
+            subjects[randomSubject] = "used";
+            verbs[randomVerb] = "used";
+            objects[randomObject] = "used";
         }
     }
 }
