@@ -6,32 +6,18 @@ namespace AFG1._1
     {
         static void Main(string[] args)
         {
-            double a;
-            double v;
-
-
-            var Num = (args[1]);
-            double d = Convert.ToDouble(Num);
+            double size = Convert.ToDouble(args[1]);
 
             switch (args[0])
             {
                 case "w":
-                    Console.WriteLine("Es werden die Daten für den Würfel berechnet!");
-                    a = getCubeSurface(d);
-                    v = getCubeVolume(d);
-                    getCubeInfo(a, v);
+                    Console.WriteLine(getCubeInfo(size));
                     break;
                 case "k":
-                    Console.WriteLine("Daten für die Kugel wierden berschnet");
-                    a = getSphereSurface(d);
-                    v = getSphereVolume(d);
-                    getSphereInfo(a, v);
+                    Console.WriteLine(getSphereInfo(size));
                     break;
                 case "o":
-                    Console.WriteLine("Es werden die Daten für den Octaeder berechnet");
-                    a = getOcSurface(d);
-                    v = getOcVolume(d);
-                    getOcInfo(a, v);
+                    Console.WriteLine(getOctahedronInfo(size));
                     break;
                 default:
                     Console.WriteLine("Verstehe ich nicht");
@@ -40,63 +26,45 @@ namespace AFG1._1
 
         }
         //Methoden Würfel
-        public static double getCubeSurface(double durchmesser)
+        public static double getCubeSurface(double size)
         {
-            double d = durchmesser;
-            double a = Math.Round(6 * (d * d),2);
-            return a;
+            return Math.Round(6 * (size * size),2);
         }
-        public static double getCubeVolume(double durchmesser)
+        public static double getCubeVolume(double size)
         {
-            double d = durchmesser;
-            double v = Math.Round((d * d * d),2);
-            return v;
+            return Math.Round((size * size * size),2);
         }
-        public static void getCubeInfo(double surface, double volume)
+        public static string getCubeInfo(double size)
         {
-            double a = surface;
-            double v = volume;
-            Console.WriteLine("A=" + a + " | " + "V=" + v);
+            return "A=" + getCubeSurface(size) + " | " + "V=" + getCubeVolume(size);
         }
 
         //Methoden Kugel
-        public static double getSphereSurface(double durchmesser)
+        public static double getSphereSurface(double size)
         {
-            double d = durchmesser;
-            double a = Math.Round(Math.PI * (d * d),2);
-            return a;
+            return Math.Round(Math.PI * (size * size),2);
         }
-        public static double getSphereVolume(double durchmesser)
+        public static double getSphereVolume(double size)
         {
-            double d = durchmesser;
-            double v = Math.Round((Math.PI * (d * d * d)) / 6,2);
-            return v;
+            return Math.Round((Math.PI * (size * size * size)) / 6,2);;
         }
-        public static void getSphereInfo(double surface, double volume)
+        public static string getSphereInfo(double size)
         {
-            double a = surface;
-            double v = volume;
-            Console.WriteLine("A=" + a + " | " + "V=" + v);
+            return "A=" + getSphereSurface(size) + " | " + "V=" + getSphereVolume(size);
         }
 
         //Method Oktaeder
-        public static double getOcSurface(double durchmesser)
+        public static double getOctahedronSurface(double size)
         {
-            double d = durchmesser;
-            double a = Math.Round(2 * Math.Sqrt(3) * (d * d),2);
-            return a;
+            return Math.Round(2 * Math.Sqrt(3) * (size * size),2);
         }
-        public static double getOcVolume(double durchmesser)
+        public static double getOctahedronVolume(double size)
         {
-            double d = durchmesser;
-            double v = Math.Round((Math.Sqrt(2) * (d * d * d)) / 3,2);
-            return v;
+            return Math.Round((Math.Sqrt(2) * (size * size * size)) / 3,2);
         }
-        public static void getOcInfo(double surface, double volume)
+        public static string getOctahedronInfo(double size)
         {
-            double a = surface;
-            double v = volume;
-            Console.WriteLine("A=" + a + " | " + "V=" + v);
+            return "A=" + getOctahedronSurface(size) + " | " + "V=" + getOctahedronVolume(size);
         }
     }
 }
