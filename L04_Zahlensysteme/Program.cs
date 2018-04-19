@@ -6,50 +6,39 @@ namespace L04_Zahlensysteme
     {
         static void Main(string[] args)
         {
-            // Console.WriteLine(toHexal(Convert.ToInt32(args[0])));
-            // Console.WriteLine(toDecimal(Convert.ToInt32(args[0])));
-            // Console.WriteLine(ConvertToBaseFromDecimal(Convert.ToInt32(args[0]),Convert.ToInt32(args[1])));
-            // Console.WriteLine(ConvertToDecimalFromBase(Convert.ToInt32(args[0]),Convert.ToInt32(args[1])));
-            Console.WriteLine(ConvertNumberToBaseFromBase(Convert.ToInt32(args[0]),Convert.ToInt32(args[1]),Convert.ToInt32(args[2])));
+            Console.WriteLine("ConvertDecimalToHexal: " + ConvertDecimalToHexal(Convert.ToInt32(args[0])));
+            Console.WriteLine("ConvertHexalToDezimal: " + ConvertHexalToDezimal(Convert.ToInt32(args[0])));
+            Console.WriteLine("ConvertToBaseFromDecimal: " + ConvertToBaseFromDecimal(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
+            Console.WriteLine("ConvertToDecimalFromBase: " + ConvertToDecimalFromBase(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
+            Console.WriteLine("ConvertNumberToBaseFromBase: " + ConvertNumberToBaseFromBase(Convert.ToInt32(args[0]), Convert.ToInt32(args[1]), Convert.ToInt32(args[2])));
         }
-        public static int toHexal(int value)
+        public static int ConvertDecimalToHexal(int dec)
         {
-            //if Anweisung schreiben!
-            // var multiplicatorSix = (value/6);
-            // var addSix = value%6;
-            // var x = 10*multiplicatorSix+addSix;
-            // return x;
-            // int rest;
-            // while(value>0)
-            // {
-            //     value = value/6;
-            //     rest = value%6;
-            // }
-            int newValue = value/6;
-            int[] arr = new int[4];
-           
-                
-                
-                for(int i=0;i<=value.ToString().Length+2;i++)
+            if (dec >= 0 && dec <= 1023)
+            {
+                int newValue = dec / 6;
+                int[] arr = new int[4];
+                for (int i = 0; i <= dec.ToString().Length + 2; i++)
                 {
-                    newValue = value/6;
-                    int rest = value%6;
-                    
+                    newValue = dec / 6;
+                    int rest = dec % 6;
                     arr[i] = rest;
-                    // Console.WriteLine("For-Ergebnis: " + arr[i]);
-                    // Console.WriteLine(newValue + " mod " + rest);
-                    // Console.WriteLine(newValue);
-                    // Console.WriteLine(rest);
-                    value = newValue;
+                    dec = newValue;
                 }
                 Array.Reverse(arr);
-                int newArray = Convert.ToInt32(string.Join("",arr));
-               
-            return newArray;
+                int newArray = Convert.ToInt32(string.Join("", arr));
+
+                return newArray;
+            }
+            else
+            {
+                return -1;
+            }
+
         }
-        public static int toDecimal(int value)
+        public static int ConvertHexalToDezimal(int hexal)
         {
-            int a = Math.Abs(value);
+            int a = Math.Abs(hexal);
             int length = a.ToString().Length;
             int[] array = new int[length];
             int[] newArray = new int[length];
@@ -58,109 +47,63 @@ namespace L04_Zahlensysteme
             {
                 array[i] = a % 10;
                 a /= 10;
-                newArray[i] += array[i]*Convert.ToInt32(Math.Pow(6,i));
-                // Console.WriteLine(newArray[i]);
-
-                
-              
+                newArray[i] += array[i] * Convert.ToInt32(Math.Pow(6, i));
             }
-              for(int x = 0;x<newArray.Length;x++)
-                {
-                    sum += newArray[x];
-                }
-            
-            //4423 = 4*6^3 + 4*6^2 + 2*6^1 + 3*6^0 = 1023
-            //864 + 144 + 12 + 3
-            // double decima = array[0]*Math.Pow(6,0)+array[1]*Math.Pow(6,1)+array[2]*Math.Pow(6,2)+array[3]*Math.Pow(6,3);
-            // int result = Convert.ToInt32(decima);
+            for (int x = 0; x < newArray.Length; x++)
+            {
+                sum += newArray[x];
+            }
             return sum;
         }
-         public static int ConvertToBaseFromDecimal(int toBase, int value)
+        public static int ConvertToBaseFromDecimal(int toBase, int number)
         {
-            int newValue = value/toBase;
+            int newValue = number / toBase;
             int[] arr = new int[4];
-           
-                
-                
-                for(int i=0;i<=value.ToString().Length+2;i++)
-                {
-                    newValue = value/toBase;
-                    int rest = value%toBase;
-                    
-                    arr[i] = rest;
-                    value = newValue;
-                }
-                Array.Reverse(arr);
-                int newArray = Convert.ToInt32(string.Join("",arr));
-               
+
+            for (int i = 0; i <= number.ToString().Length + 2; i++)
+            {
+                newValue = number / toBase;
+                int rest = number % toBase;
+                arr[i] = rest;
+                number = newValue;
+            }
+            Array.Reverse(arr);
+            int newArray = Convert.ToInt32(string.Join("", arr));
+
             return newArray;
         }
-        public static int ConvertToDecimalFromBase(int fromBase, int value)
+        public static int ConvertToDecimalFromBase(int fromBase, int number)
         {
-            int a = Math.Abs(value);
-            int length = a.ToString().Length;
+
+            int length = number.ToString().Length;
             int[] array = new int[length];
             int[] newArray = new int[length];
             int sum = 0;
             for (int i = 0; i < length; i++)
             {
-                array[i] = a % 10;
-                a /= 10;
-                newArray[i] += array[i]*Convert.ToInt32(Math.Pow(fromBase,i));
-                // Console.WriteLine(newArray[i]);
-
-                
-              
+                array[i] = number % 10;
+                number /= 10;
+                newArray[i] += array[i] * Convert.ToInt32(Math.Pow(fromBase, i));
             }
-              for(int x = 0;x<newArray.Length;x++)
-                {
-                    sum += newArray[x];
-                }
+            for (int x = 0; x < newArray.Length; x++)
+            {
+                sum += newArray[x];
+            }
             return sum;
         }
-        public static int ConvertNumberToBaseFromBase(int value, int toBase, int fromBase)
+        public static int ConvertNumberToBaseFromBase(int number, int toBase, int fromBase)
         {
-            int a = Math.Abs(value);
-            int length = a.ToString().Length;
-            int[] array = new int[length];
-            int[] newArray = new int[length];
-            int sum = 0;
-            for (int i = 0; i < length; i++)
+            if (toBase > 2 && toBase < 10 && fromBase > 2 && fromBase < 10)
             {
-                array[i] = a % 10;
-                a /= 10;
-                newArray[i] += array[i]*Convert.ToInt32(Math.Pow(fromBase,i));
-                // Console.WriteLine(newArray[i]);
+                int dec = ConvertToDecimalFromBase(fromBase, number);
+                int newValue = ConvertToBaseFromDecimal(toBase, dec);
 
-                
-              
+                return newValue;
             }
-              for(int x = 0;x<newArray.Length;x++)
-                {
-                    sum += newArray[x];
-                }
-            //return sum;
-            Console.WriteLine(sum);
-
-            //Code teil2
-            int newValue = sum/toBase;
-            int[] arr = new int[4];
-           
-                
-                
-                for(int i=0;i<=sum.ToString().Length+2;i++)
-                {
-                    newValue = sum/toBase;
-                    int rest = sum%toBase;
-                    
-                    arr[i] = rest;
-                    sum = newValue;
-                }
-                Array.Reverse(arr);
-                int newArray2 = Convert.ToInt32(string.Join("",arr));
-               
-            return newArray2;
-            
+            else
+            {
+                return -1;
+            }
         }
     }
 }
