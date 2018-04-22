@@ -8,8 +8,8 @@ namespace L04_Zahlensysteme
         {
             Console.WriteLine("ConvertDecimalToHexal: " + ConvertDecimalToHexal(Convert.ToInt32(args[0])));
             Console.WriteLine("ConvertHexalToDezimal: " + ConvertHexalToDezimal(Convert.ToInt32(args[0])));
-            Console.WriteLine("ConvertToBaseFromDecimal: " + ConvertToBaseFromDecimal(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
-            Console.WriteLine("ConvertToDecimalFromBase: " + ConvertToDecimalFromBase(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
+            Console.WriteLine("ConvertToBaseFromDecimal: " + ConvertToBaseFromDecimal(Convert.ToInt32(args[1]), Convert.ToInt32(args[0])));
+            Console.WriteLine("ConvertToDecimalFromBase: " + ConvertToDecimalFromBase(Convert.ToInt32(args[2]), Convert.ToInt32(args[0])));
             Console.WriteLine("ConvertNumberToBaseFromBase: " + ConvertNumberToBaseFromBase(Convert.ToInt32(args[0]), Convert.ToInt32(args[1]), Convert.ToInt32(args[2])));
         }
         public static int ConvertDecimalToHexal(int dec)
@@ -22,7 +22,6 @@ namespace L04_Zahlensysteme
             {
                 return -1;
             }
-
         }
         public static int ConvertHexalToDezimal(int hexal)
         { 
