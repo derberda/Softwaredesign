@@ -1,0 +1,10 @@
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L05_progC\obj\Debug\netcoreapp2.0\L05_progC.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L05_progC\obj\Debug\netcoreapp2.0\L05_progC.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L05_progC\obj\Debug\netcoreapp2.0\L05_progC.AssemblyInfo.cs
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L05_progC\bin\Debug\netcoreapp2.0\L05_progC.deps.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L05_progC\bin\Debug\netcoreapp2.0\L05_progC.runtimeconfig.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L05_progC\bin\Debug\netcoreapp2.0\L05_progC.runtimeconfig.dev.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L05_progC\bin\Debug\netcoreapp2.0\L05_progC.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L05_progC\bin\Debug\netcoreapp2.0\L05_progC.pdb
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L05_progC\obj\Debug\netcoreapp2.0\L05_progC.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\L05_progC\obj\Debug\netcoreapp2.0\L05_progC.pdb
