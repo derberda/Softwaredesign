@@ -35,7 +35,7 @@ namespace L05_progC
         // // //     // _foundChilds = _children.FindAll(x => x._children.Contains(child));
         // // //     // Console.WriteLine(_foundChilds);
         // }
-        
+
         public List<Tree<T>> FindChild(T search, List<Tree<T>> found = null)
         {
             if (found == null)
@@ -52,7 +52,7 @@ namespace L05_progC
             }
             return found;
         }
-         public override string ToString()
+        public override string ToString()
         {
             return _value.ToString();
         }
@@ -63,9 +63,9 @@ namespace L05_progC
             {
                 child.PrintTree(str + "*");
             }
-           
-        } 
+
+        }
     }
 
-    }
+}
 

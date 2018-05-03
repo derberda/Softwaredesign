@@ -28,7 +28,7 @@ namespace L05_progC
             foreach (var element in root.FindChild("child1"))
             {
                 Console.WriteLine(element);
-            }   
-    }
+            }
+        }
     }
 }
