@@ -1,46 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace L05_progC
 {
-    public class Tree<T>
-    {
-        public T _value;
-        public List<Tree<T>> _children = new List<Tree<T>>();
-
-        // public Tree(T value)
-        // {
-        //     _value = value;
-        // }
-
-        public Tree<T> CreateNode(T value)
-        {
-            Tree<T> newValue = new Tree<T>
-            {
-                _value = value
-            };
-            return newValue;
-        }
-
-        public void AppendChild(Tree<T> child)
-        {
-            _children.Add(child);
-        }
-        public void RemoveChild(Tree<T> child)
-        {
-            _children.Remove(child);
-        }
-        public void PrintTree(String str = "")
-        {
-            Console.WriteLine(str + _value);
-            foreach (Tree<T> child in _children)
-            {
-                child.PrintTree(str + "*");
-            }
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
@@ -62,6 +23,12 @@ namespace L05_progC
             child1.RemoveChild(grand12);
 
             root.PrintTree();
-        }
+
+            // child1.FindChild(grand12);
+            foreach (var element in root.FindChild("abc"))
+            {
+                Console.WriteLine(element);
+            }   
+    }
     }
 }

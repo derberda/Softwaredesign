@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\Afg\\L05_progC\\L05_progC.csproj",
+      "projectUniqueName": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\Afg\\L05_ProgC\\L05_progC.csproj",
       "projectName": "L05_progC",
-      "projectPath": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\Afg\\L05_progC\\L05_progC.csproj",
+      "projectPath": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\Afg\\L05_ProgC\\L05_progC.csproj",
       "packagesPath": "C:\\Users\\Berdan Der\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\Afg\\L05_progC\\obj\\",
+      "outputPath": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\Afg\\L05_ProgC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
