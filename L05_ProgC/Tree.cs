@@ -52,6 +52,10 @@ namespace L05_progC
             }
             return found;
         }
+         public override string ToString()
+        {
+            return _value.ToString();
+        }
         public void PrintTree(String str = "")
         {
             Console.WriteLine(str + _value);
