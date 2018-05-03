@@ -25,7 +25,7 @@ namespace L05_progC
             root.PrintTree();
 
             // child1.FindChild(grand12);
-            foreach (var element in root.FindChild("abc"))
+            foreach (var element in root.FindChild("21"))
             {
                 Console.WriteLine(element);
             }   
