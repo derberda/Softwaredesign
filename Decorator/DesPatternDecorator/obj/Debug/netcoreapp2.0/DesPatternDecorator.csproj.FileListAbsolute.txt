@@ -1,0 +1,10 @@
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Decorator\DesPatternDecorator\bin\Debug\netcoreapp2.0\DesPatternDecorator.deps.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Decorator\DesPatternDecorator\bin\Debug\netcoreapp2.0\DesPatternDecorator.runtimeconfig.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Decorator\DesPatternDecorator\bin\Debug\netcoreapp2.0\DesPatternDecorator.runtimeconfig.dev.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Decorator\DesPatternDecorator\bin\Debug\netcoreapp2.0\DesPatternDecorator.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Decorator\DesPatternDecorator\bin\Debug\netcoreapp2.0\DesPatternDecorator.pdb
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Decorator\DesPatternDecorator\obj\Debug\netcoreapp2.0\DesPatternDecorator.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Decorator\DesPatternDecorator\obj\Debug\netcoreapp2.0\DesPatternDecorator.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Decorator\DesPatternDecorator\obj\Debug\netcoreapp2.0\DesPatternDecorator.AssemblyInfo.cs
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Decorator\DesPatternDecorator\obj\Debug\netcoreapp2.0\DesPatternDecorator.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Decorator\DesPatternDecorator\obj\Debug\netcoreapp2.0\DesPatternDecorator.pdb
