@@ -1,0 +1,10 @@
+C:\Users\Berdan Der\Semester_4\Softwaredesign\AFG\Design_Pattern\DesPatternSingleton\bin\Debug\netcoreapp2.0\DesPatternSingleton.deps.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\AFG\Design_Pattern\DesPatternSingleton\bin\Debug\netcoreapp2.0\DesPatternSingleton.runtimeconfig.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\AFG\Design_Pattern\DesPatternSingleton\bin\Debug\netcoreapp2.0\DesPatternSingleton.runtimeconfig.dev.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\AFG\Design_Pattern\DesPatternSingleton\bin\Debug\netcoreapp2.0\DesPatternSingleton.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\AFG\Design_Pattern\DesPatternSingleton\bin\Debug\netcoreapp2.0\DesPatternSingleton.pdb
+C:\Users\Berdan Der\Semester_4\Softwaredesign\AFG\Design_Pattern\DesPatternSingleton\obj\Debug\netcoreapp2.0\DesPatternSingleton.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\AFG\Design_Pattern\DesPatternSingleton\obj\Debug\netcoreapp2.0\DesPatternSingleton.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\AFG\Design_Pattern\DesPatternSingleton\obj\Debug\netcoreapp2.0\DesPatternSingleton.AssemblyInfo.cs
+C:\Users\Berdan Der\Semester_4\Softwaredesign\AFG\Design_Pattern\DesPatternSingleton\obj\Debug\netcoreapp2.0\DesPatternSingleton.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\AFG\Design_Pattern\DesPatternSingleton\obj\Debug\netcoreapp2.0\DesPatternSingleton.pdb
