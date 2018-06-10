@@ -1,0 +1,13 @@
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\bin\Debug\netcoreapp2.0\Calculator.deps.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\bin\Debug\netcoreapp2.0\Calculator.runtimeconfig.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\bin\Debug\netcoreapp2.0\Calculator.runtimeconfig.dev.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\bin\Debug\netcoreapp2.0\Calculator.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\bin\Debug\netcoreapp2.0\Calculator.pdb
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\bin\Debug\netcoreapp2.0\Operations.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\bin\Debug\netcoreapp2.0\Operations.pdb
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\obj\Debug\netcoreapp2.0\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\obj\Debug\netcoreapp2.0\Calculator.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\obj\Debug\netcoreapp2.0\Calculator.AssemblyInfo.cs
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\obj\Debug\netcoreapp2.0\Calculator.csproj.CopyComplete
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\obj\Debug\netcoreapp2.0\Calculator.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Calculator\obj\Debug\netcoreapp2.0\Calculator.pdb

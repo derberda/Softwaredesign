@@ -1,0 +1,10 @@
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Generics-Übung\bin\Debug\netcoreapp2.0\Generics-Übung.deps.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Generics-Übung\bin\Debug\netcoreapp2.0\Generics-Übung.runtimeconfig.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Generics-Übung\bin\Debug\netcoreapp2.0\Generics-Übung.runtimeconfig.dev.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Generics-Übung\bin\Debug\netcoreapp2.0\Generics-Übung.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Generics-Übung\bin\Debug\netcoreapp2.0\Generics-Übung.pdb
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Generics-Übung\obj\Debug\netcoreapp2.0\Generics-Übung.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Generics-Übung\obj\Debug\netcoreapp2.0\Generics-Übung.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Generics-Übung\obj\Debug\netcoreapp2.0\Generics-Übung.AssemblyInfo.cs
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Generics-Übung\obj\Debug\netcoreapp2.0\Generics-Übung.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Generics-Übung\obj\Debug\netcoreapp2.0\Generics-Übung.pdb

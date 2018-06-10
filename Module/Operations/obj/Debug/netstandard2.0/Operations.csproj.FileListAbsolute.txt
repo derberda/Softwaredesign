@@ -1,0 +1,8 @@
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Operations\bin\Debug\netstandard2.0\Operations.deps.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Operations\bin\Debug\netstandard2.0\Operations.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Operations\bin\Debug\netstandard2.0\Operations.pdb
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Operations\obj\Debug\netstandard2.0\Operations.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Operations\obj\Debug\netstandard2.0\Operations.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Operations\obj\Debug\netstandard2.0\Operations.AssemblyInfo.cs
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Operations\obj\Debug\netstandard2.0\Operations.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\Operations\obj\Debug\netstandard2.0\Operations.pdb

@@ -1,0 +1,3 @@
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\obj\Debug\netcoreapp2.0\Module.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\obj\Debug\netcoreapp2.0\Module.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\Module\obj\Debug\netcoreapp2.0\Module.AssemblyInfo.cs
