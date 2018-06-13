@@ -1,0 +1,10 @@
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\xo\obj\Debug\netcoreapp2.0\xo.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\xo\obj\Debug\netcoreapp2.0\xo.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\xo\obj\Debug\netcoreapp2.0\xo.AssemblyInfo.cs
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\xo\bin\Debug\netcoreapp2.0\xo.deps.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\xo\bin\Debug\netcoreapp2.0\xo.runtimeconfig.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\xo\bin\Debug\netcoreapp2.0\xo.runtimeconfig.dev.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\xo\bin\Debug\netcoreapp2.0\xo.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\xo\bin\Debug\netcoreapp2.0\xo.pdb
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\xo\obj\Debug\netcoreapp2.0\xo.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\Afg\xo\obj\Debug\netcoreapp2.0\xo.pdb
