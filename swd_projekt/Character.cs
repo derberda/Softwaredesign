@@ -8,7 +8,7 @@ namespace swd_projekt
         public string name;
         public int health;
         public bool dead;
-        public static List<string> inventory = new List<string>();
+        public static List<Items> inventory = new List<Items>();
 
 
     }
@@ -16,7 +16,7 @@ namespace swd_projekt
     {
         public static int playerLocation;
 
-         public Avatar(int _health)
+        public Avatar(int _health)
         {
             health = _health;
         }

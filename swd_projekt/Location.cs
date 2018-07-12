@@ -8,9 +8,9 @@ namespace swd_projekt
         public string title;
         public string description;
         public int roomNumber;
-        public List<string> items = new List<string>();
-        public Location north;
-        public Location east;
+        public List<Items> items = new List<Items>();
+        public  Location north;
+        public  Location east;
         public Location south;
         public Location west;
         public static Enemy infos = Enemy.EnemySetUp();
@@ -36,12 +36,9 @@ namespace swd_projekt
                 1,
                 "The supermarket",
                 "You're in the supermarket. You can see some food and something to eat. In the moment you can't see anybody");
-            Items chocolate = new Items("chocolate bar", "It seems to be soo delicious:(");
-            Items water = new Items("water bottles", "I'm not so thirsty now, but maybe for later");
+            Items chocolate = new Items("chocolate", "It seems to be soo delicious:(");
+            Items water = new Items("water", "I'm not so thirsty now, but maybe for later");
             Items bread = new Items("bread", "It looks delicios. I have'nt have eaten something for a long time...");
-            supermarket.items.Add("chocolate");
-            supermarket.items.Add("water");
-            supermarket.items.Add("bread");
 
             Location office = new Location(
                 2,
@@ -52,14 +49,10 @@ namespace swd_projekt
                 3,
                 "The cooling room",
                 "You're in the cooling room. It's very cold. You can see something to eat and drink. Furthermore you're noticing a flare");
-            Items meat = new Items("frozen meat", "Oh, is looks so good. I don't know when I had the last time meat to eat.");
+            Items meat = new Items("meat", "Oh, is looks so good. I don't know when I had the last time meat to eat.");
             Items milk = new Items("milk", "It looks old");
             Items plier = new Items("plier", "Hmm..I could need it..");
             Items screwdriver = new Items("rusty screwdriver", "It looks old. I don't know if its useable.");
-            coolingRoom.items.Add("meat");
-            coolingRoom.items.Add("milk");
-            coolingRoom.items.Add("plier");
-            coolingRoom.items.Add("screwdriver");
 
             Location backyard = new Location(
                 4,
@@ -71,16 +64,24 @@ namespace swd_projekt
             supermarket.north = parkingSpot;
             supermarket.east = office;
             supermarket.south = coolingRoom;
+            supermarket.items.Add(chocolate);
+            supermarket.items.Add(water);
+            supermarket.items.Add(bread);
 
             office.west = supermarket;
 
             coolingRoom.north = supermarket;
             coolingRoom.east = backyard;
+            coolingRoom.items.Add(meat);
+            coolingRoom.items.Add(milk);
+            coolingRoom.items.Add(plier);
+            coolingRoom.items.Add(screwdriver);
 
             backyard.west = coolingRoom;
 
             return parkingSpot;
         }
+
         public static void AvatarCurrentLocation(Location location)
         {
             Avatar.playerLocation = location.roomNumber;
@@ -121,7 +122,7 @@ namespace swd_projekt
                 Console.WriteLine("In the room you can see these items: ");
                 foreach (var item in location.items)
                 {
-                    Console.WriteLine(item + " - ");
+                    Console.WriteLine(item.title + " - " + item.description);
                 }
             }
         }
@@ -139,7 +140,7 @@ namespace swd_projekt
             //win
             if (location.title == "The backyard")
             {
-                if (Avatar.inventory.Contains("plier"))
+                if (Avatar.inventory.Exists(x => x.title == "plier"))
                 {
                     Console.WriteLine("You have won!");
                     Environment.Exit(0);

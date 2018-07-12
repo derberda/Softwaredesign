@@ -5,82 +5,82 @@ namespace swd_projekt
 {
     class Controls
     {
+        public static string[] words;
+        // public Location direction;
+        public static Location currentRoom = Location.MapSetUp();
+
+        public static Array splitInput()
+        {
+            string _input = Console.ReadLine();
+            words = _input.Split(' ');
+            return words;
+        }
         public static void gameControls()
         {
 
             Console.WriteLine("Welcome to ---\n-----------some intro.");
-            Location currentRoom = Location.MapSetUp();
+            
             Enemy infos = Enemy.EnemySetUp();
             Avatar avatarInfos = Avatar.AvatarSetUp();
 
-            string input = "";
-
-            while (input != "q")
+            for (; ; )
             {
                 Location.DescribeRoom(currentRoom);
-                input = Console.ReadLine().ToLower();
+                splitInput();
 
-                switch (input)
+                switch (words[0])
                 {
                     case "north":
                     case "n":
-                        if (currentRoom.north != null)
-                        {
-                            currentRoom = currentRoom.north;
-                            Location.AvatarCurrentLocation(currentRoom);
-                            Location.EnemyRandomLocation(currentRoom);
-                        }
-                        else
-                        {
-                            Console.WriteLine("There is no way! Choose another one!");
-                        }
+                        roomDirection(words[0]);
                         break;
                     case "east":
                     case "e":
-                        if (currentRoom.east != null)
-                        {
-                            currentRoom = currentRoom.east;
-                            Location.AvatarCurrentLocation(currentRoom);
-                            Location.EnemyRandomLocation(currentRoom);
-                        }
-                        else
-                        {
-                            Console.WriteLine("There is no way! Choose another one!");
-                        }
+                        roomDirection(words[0]);
                         break;
                     case "south":
                     case "s":
-                        if (currentRoom.south != null)
-                        {
-                            currentRoom = currentRoom.south;
-                            Location.AvatarCurrentLocation(currentRoom);
-                            Location.EnemyRandomLocation(currentRoom);
-                        }
-                        else
-                        {
-                            Console.WriteLine("There is no way! Choose another one!");
-                        }
+                        roomDirection(words[0]);
                         break;
                     case "west":
                     case "w":
-                        if (currentRoom.west != null)
-                        {
-                            currentRoom = currentRoom.west;
-                            Location.AvatarCurrentLocation(currentRoom);
-                            Location.EnemyRandomLocation(currentRoom);
-                        }
-                        else
-                        {
-                            Console.WriteLine("There is no way! Choose another one!");
-                        }
+                        roomDirection(words[0]);
                         break;
                     case "take":
                     case "t":
-                        takeItem(currentRoom);
+                        try
+                        {
+                            if (words[1] == "")
+                            {
+                                Console.WriteLine("You have to choose an item!");
+                            }
+                            else
+                            {
+                                takeItem(words[1], currentRoom);
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("I don't understand this input :/ Please write it like this: t/take + itemname.");
+                        }
                         break;
                     case "drop":
                     case "d":
-                        dropItem(currentRoom);
+                        try
+                        {
+                            if (words[1] == "")
+                            {
+                                Console.WriteLine("You have to choose an item!");
+                            }
+                            else
+                            {
+                                dropItem(words[1], currentRoom);
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("I don't understand this input :/ Please write it like this: t/take + itemname.");
+                        }
                         break;
                     case "inventory":
                     case "i":
@@ -95,8 +95,9 @@ namespace swd_projekt
                         if (Avatar.playerLocation == Enemy.randomLocation)
                         {
                             Attack.Fight();
-                        }else 
-                        Console.WriteLine("There's no one to attack!");
+                        }
+                        else
+                            Console.WriteLine("There's no one to attack!");
                         break;
                     case "commands":
                     case "c":
@@ -114,22 +115,57 @@ namespace swd_projekt
                 }
             }
         }
-        public static void takeItem(Location location)
+        public static Location roomDirection(string words)
         {
-            Console.WriteLine("Which Item do you want to take with you?:");
-            string item = Console.ReadLine();
+            Location direction = null;
+            if (words == "n" || words == "north")
+            {
+                direction = Controls.currentRoom.north;
+            }
+            else if (words == "e" || words == "east")
+            {
+                direction = currentRoom.east;
+            }
+            else if (words == "s" || words == "south")
+            {
+                direction = currentRoom.south;
+            }
+            else if (words == "w" || words == "west")
+            {
+                direction = currentRoom.west;
+            }
+            if (direction != null)
+            {
+                try
+                {
+                currentRoom = direction;
+                Location.AvatarCurrentLocation(currentRoom);
+                Location.EnemyRandomLocation(currentRoom);
+                // direction = null;
+                }
+                catch
+                {
+                    Console.WriteLine("There is no way! Choose another one!");
+                }
+            }
+            
+            return currentRoom;
+        }
+        public static void takeItem(string words, Location location)
+        {
+            Items foundItem = location.items.Find(x => x.title.Contains(words));
+            if (foundItem != null)
+            {
+                Console.WriteLine("Found: " + foundItem.title);
+            }
+            else
+            {
+                Console.WriteLine("This item does not exist!");
+            }
             if (location.items.Count > 0)
             {
-
-                if (location.items.Contains(item))
-                {
-                    Avatar.inventory.Add(item);
-                    location.items.Remove(item);
-                }
-                else
-                {
-                    Console.WriteLine("This item does not exist!");
-                }
+                location.items.Remove(foundItem);
+                Avatar.inventory.Add(foundItem);
             }
             else
             {
@@ -143,7 +179,7 @@ namespace swd_projekt
             {
                 foreach (var i in Avatar.inventory)
                 {
-                    Console.WriteLine("Inventar: " + i);
+                    Console.WriteLine("Inventar: " + i.title);
                 }
             }
             else
@@ -152,18 +188,15 @@ namespace swd_projekt
             }
         }
 
-        public static void dropItem(Location location)
+        public static void dropItem(string words, Location location)
         {
             if (Avatar.inventory.Count > 0)
             {
+                Items foundItem = Avatar.inventory.Find(x => x.title.Contains(words));
+                location.items.Find(x => x.title.Contains(words));
+                Avatar.inventory.RemoveAll(x => x.title == words);
+                location.items.Add(foundItem);
                 myInventory();
-                Console.WriteLine("Which item do you want to drop?: ");
-                string drop = Console.ReadLine();
-                if (Avatar.inventory.Contains(drop))
-                {
-                    location.items.Add(drop);
-                    Avatar.inventory.Remove(drop);
-                }
             }
             else
             {
@@ -171,6 +204,7 @@ namespace swd_projekt
             }
 
         }
+
 
     }
 }
