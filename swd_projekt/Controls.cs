@@ -6,9 +6,8 @@ namespace swd_projekt
     class Controls
     {
         public static string[] words;
+
         public static Location currentRoom = Location.MapSetUp();
-        public static Enemy enemyInfos = Enemy.EnemySetUp();
-        public static Avatar avatarInfos = Avatar.AvatarSetUp();
 
         public static Array splitInput()
         {
@@ -18,30 +17,32 @@ namespace swd_projekt
         }
         public static void gameControls()
         {
+            Enemy enemyInfos = Enemy.EnemySetUp();
+            Avatar avatarInfos = Avatar.AvatarSetUp();
             Console.WriteLine("Welcome to ---\n-----------some intro.");
 
             for (; ; )
             {
-                Location.DescribeRoom(currentRoom);
+                Location.DescribeRoom(currentRoom, avatarInfos, enemyInfos);
                 splitInput();
 
                 switch (words[0])
                 {
                     case "north":
                     case "n":
-                        roomDirection(words[0]);
+                        roomDirection(currentRoom, words[0], avatarInfos, enemyInfos);
                         break;
                     case "east":
                     case "e":
-                        roomDirection(words[0]);
+                        roomDirection(currentRoom, words[0], avatarInfos, enemyInfos);
                         break;
                     case "south":
                     case "s":
-                        roomDirection(words[0]);
+                        roomDirection(currentRoom, words[0], avatarInfos, enemyInfos);
                         break;
                     case "west":
                     case "w":
-                        roomDirection(words[0]);
+                        roomDirection(currentRoom, words[0], avatarInfos, enemyInfos);
                         break;
                     case "take":
                     case "t":
@@ -53,7 +54,7 @@ namespace swd_projekt
                             }
                             else
                             {
-                                takeItem(words[1], currentRoom);
+                                takeItem(words[1], currentRoom, avatarInfos);
                             }
                         }
                         catch
@@ -71,7 +72,7 @@ namespace swd_projekt
                             }
                             else
                             {
-                                dropItem(words[1], currentRoom);
+                                dropItem(words[1], currentRoom, avatarInfos);
                             }
                         }
                         catch
@@ -81,7 +82,7 @@ namespace swd_projekt
                         break;
                     case "inventory":
                     case "i":
-                        myInventory();
+                        myInventory(avatarInfos);
                         break;
                     case "look":
                     case "l":
@@ -91,7 +92,7 @@ namespace swd_projekt
                     case "a":
                         if (avatarInfos.playerLocation == Enemy.randomLocation)
                         {
-                            Attack.Fight(avatarInfos, enemyInfos);
+                            Attack.Fight(currentRoom, avatarInfos, enemyInfos);
                         }
                         else
                             Console.WriteLine("There's no one to attack!");
@@ -112,7 +113,7 @@ namespace swd_projekt
                 }
             }
         }
-        public static Location roomDirection(string words)
+        public static Location roomDirection(Location location, string words, Avatar avatarInfos, Enemy enemyInfos)
         {
             Location direction = null;
             if (words == "n" || words == "north")
@@ -133,21 +134,17 @@ namespace swd_projekt
             }
             if (direction != null)
             {
-                try
-                {
-                    currentRoom = direction;
-                    // Avatar.AvatarCurrentLocation(currentRoom, avatarInfos, enemyInfos);
-                    avatarInfos.AvatarCurrentLocation(currentRoom, avatarInfos, enemyInfos);
-                }
-                catch
-                {
-                    Console.WriteLine("There is no way! Choose another one!");
-                }
-                
+                currentRoom = direction;
+                avatarInfos.AvatarCurrentLocation(currentRoom, avatarInfos, enemyInfos);
             }
+            else
+            {
+                Console.WriteLine("There is no way! Choose another one!");
+            }
+
             return currentRoom;
         }
-        public static void takeItem(string words, Location location)
+        public static void takeItem(string words, Location location, Avatar avatarInfos)
         {
             Items foundItem = location.items.Find(x => x.title.Contains(words));
             if (foundItem != null)
@@ -168,7 +165,7 @@ namespace swd_projekt
                 Console.WriteLine("There are no items in this room!");
             }
         }
-        public static void myInventory()
+        public static void myInventory(Avatar avatarInfos)
         {
             if (avatarInfos.inventory.Count > 0)
             {
@@ -183,7 +180,7 @@ namespace swd_projekt
             }
         }
 
-        public static void dropItem(string words, Location location)
+        public static void dropItem(string words, Location location, Avatar avatarInfos)
         {
             if (avatarInfos.inventory.Count > 0)
             {
@@ -191,7 +188,7 @@ namespace swd_projekt
                 location.items.Find(x => x.title.Contains(words));
                 avatarInfos.inventory.RemoveAll(x => x.title == words);
                 location.items.Add(foundItem);
-                myInventory();
+                myInventory(avatarInfos);
             }
             else
             {

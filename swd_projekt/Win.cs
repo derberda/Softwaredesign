@@ -5,11 +5,11 @@ namespace swd_projekt
 {
     class Win
     {
-        public static void checkWin(Location location)
+        public static void checkWin(Location location, Avatar avatarInfos)
         {
             if (location.title == "The backyard")
             {
-                if (Controls.avatarInfos.inventory.Exists(x => x.title == "plier"))
+                if (avatarInfos.inventory.Exists(x => x.title == "plier"))
                 {
                     Console.WriteLine("You have won!");
                     Environment.Exit(0);
@@ -20,7 +20,7 @@ namespace swd_projekt
                 }
             }
         }
-         
+
     }
 
 }

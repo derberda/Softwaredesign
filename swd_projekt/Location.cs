@@ -78,14 +78,14 @@ namespace swd_projekt
 
             return parkingSpot;
         }
-      
-        
-        public static void RoomCheck()
+
+
+        public static void RoomCheck(Avatar avatarInfos, Enemy enemyInfos)
         {
-            if (Controls.avatarInfos.playerLocation == Enemy.randomLocation)
+            if (avatarInfos.playerLocation == Enemy.randomLocation)
             {
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.WriteLine("The " + Controls.enemyInfos.name + "is in the house - You have fight!");
+                Console.WriteLine("The " + enemyInfos.name + "is in the house - You have fight!");
                 Console.WriteLine("What do you want to do? - Attack with (a)!");
             }
         }
@@ -100,7 +100,7 @@ namespace swd_projekt
                 }
             }
         }
-        public static void DescribeRoom(Location location)
+        public static void DescribeRoom(Location location, Avatar avatarInfos, Enemy enemyInfos)
         {
             Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");
             Console.WriteLine();
@@ -110,10 +110,11 @@ namespace swd_projekt
             Console.WriteLine();
             Console.WriteLine(location.description);
             Console.ResetColor();
-            RoomCheck();
-            //win
-            // Win.checkWin(location);
+            RoomCheck(avatarInfos, enemyInfos);
             
+            //win
+            Win.checkWin(location, avatarInfos);
+
             Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");
         }
     }

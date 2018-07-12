@@ -26,19 +26,13 @@ namespace swd_projekt
             );
             return avatar;
         }
-          public int AvatarCurrentLocation(Location location,  Avatar avatarInfos, Enemy enemyInfos)
+        public int AvatarCurrentLocation(Location location, Avatar avatarInfos, Enemy enemyInfos)
         {
             playerLocation = location.roomNumber;
             Enemy.EnemyRandomLocation(location, avatarInfos, enemyInfos);
+            
             return playerLocation;
         }
-        // public int setAvatarRoom(Location location, Avatar avatarInfos, Enemy enemyInfos)
-        // {
-        //     playerLocation = location.roomNumber;
-            
-
-        //     return playerLocation;
-        // }
 
     }
     class Enemy : Character
@@ -66,7 +60,7 @@ namespace swd_projekt
         }
         public static void EnemyRandomLocation(Location location, Avatar avatar, Enemy enemy)
         {
-            
+
             if (enemy.dead == false)
             {
                 Random rnd = new Random();

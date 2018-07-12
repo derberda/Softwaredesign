@@ -1,16 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace swd_projekt
 {
     class Attack
     {
-        // public static Enemy infos = Enemy.EnemySetUp();
-        // public static Avatar avatarInfos = Avatar.AvatarSetUp();
-        public static void Fight(Avatar avatarInfos, Enemy enemyInfos)
+        public static void Fight(Location location, Avatar avatarInfos, Enemy enemyInfos)
         {
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine("The " + enemyInfos.name + "is in the house - You have fight!");
@@ -48,25 +43,24 @@ namespace swd_projekt
                     enemyInfos.dead = true;
                     Enemy.randomLocation = -1;
                     Console.WriteLine("Suuupii du hast ihn gekillt. Er hatte Frau und Kinder!!");
-                    // dropLoot(location, enemyInfos);
+                    dropLoot(location, enemyInfos);
                     Console.ResetColor();
                     break;
                 }
 
             }
         }
-        public static void dropLoot(Location location, Enemy enemy)
+        public static void dropLoot(Location location, Enemy enemyInfos)
         {
-            if(enemy.dead == true)
+            if (enemyInfos.dead == true)
             {
-                 foreach (var i in Controls.enemyInfos.inventory)
-                    {
-                        Controls.enemyInfos.inventory.Remove(i);
-                        location.items.Add(i);
-                    }
-                    Console.WriteLine("Look there!! Your enemy dropped some items!");
+                foreach (var i in enemyInfos.inventory)
+                {
+                    location.items.Add(i);
+                }
+                Console.WriteLine("Look there!! Your enemy dropped some items!");
             }
-           
+
         }
     }
 }
