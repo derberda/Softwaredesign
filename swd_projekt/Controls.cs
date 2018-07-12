@@ -7,9 +7,11 @@ namespace swd_projekt
     {
         public static void gameControls()
         {
-           
+
             Console.WriteLine("Welcome to ---\n-----------some intro.");
             Location currentRoom = Location.MapSetUp();
+            Enemy infos = Enemy.EnemySetUp();
+            Avatar avatarInfos = Avatar.AvatarSetUp();
 
             string input = "";
 
@@ -22,12 +24,11 @@ namespace swd_projekt
                 {
                     case "north":
                     case "n":
-                         if (currentRoom.north != null)
+                        if (currentRoom.north != null)
                         {
                             currentRoom = currentRoom.north;
                             Location.AvatarCurrentLocation(currentRoom);
                             Location.EnemyRandomLocation(currentRoom);
-                            
                         }
                         else
                         {
@@ -49,7 +50,7 @@ namespace swd_projekt
                         break;
                     case "south":
                     case "s":
-                         if (currentRoom.south != null)
+                        if (currentRoom.south != null)
                         {
                             currentRoom = currentRoom.south;
                             Location.AvatarCurrentLocation(currentRoom);
@@ -62,7 +63,7 @@ namespace swd_projekt
                         break;
                     case "west":
                     case "w":
-                         if (currentRoom.west != null)
+                        if (currentRoom.west != null)
                         {
                             currentRoom = currentRoom.west;
                             Location.AvatarCurrentLocation(currentRoom);
@@ -87,10 +88,15 @@ namespace swd_projekt
                         break;
                     case "look":
                     case "l":
-                        // Location.DescribeRoom(currentRoom);
+                        Location.LookThroughRoom(currentRoom);
                         break;
-                        case "attack":
+                    case "attack":
                     case "a":
+                        if (Avatar.playerLocation == Enemy.randomLocation)
+                        {
+                            Attack.Fight();
+                        }else 
+                        Console.WriteLine("There's no one to attack!");
                         break;
                     case "commands":
                     case "c":
@@ -105,7 +111,7 @@ namespace swd_projekt
                         Console.WriteLine("You cant use this button. Use another one. If you don't know the Controls press c!");
                         Console.ResetColor();
                         break;
-                }   
+                }
             }
         }
         public static void takeItem(Location location)
@@ -129,7 +135,6 @@ namespace swd_projekt
             {
                 Console.WriteLine("There are no items in this room!");
             }
-            // Console.WriteLine(location.items);
         }
 
         public static void myInventory()

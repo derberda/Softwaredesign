@@ -8,17 +8,18 @@ namespace swd_projekt
         public string title;
         public string description;
         public int roomNumber;
-        public bool enemyLocation;
         public List<string> items = new List<string>();
         public Location north;
         public Location east;
         public Location south;
         public Location west;
+        public static Enemy infos = Enemy.EnemySetUp();
 
-        public Location(int _roomNumber, bool _enemyLocation, string _title, string _description)
+        public static Avatar avatarInfos = Avatar.AvatarSetUp();
+
+        public Location(int _roomNumber, string _title, string _description)
         {
             roomNumber = _roomNumber;
-            enemyLocation = _enemyLocation;
             title = _title;
             description = _description;
 
@@ -28,13 +29,11 @@ namespace swd_projekt
         {
             Location parkingSpot = new Location(
                 0,
-                false,
                "The parking spot",
                "You're at the Parking slot. It's cold outside and it snows. You're hungry andthere is a supermarket in front of you.");
 
             Location supermarket = new Location(
                 1,
-                false,
                 "The supermarket",
                 "You're in the supermarket. You can see some food and something to eat. In the moment you can't see anybody");
             Items chocolate = new Items("chocolate bar", "It seems to be soo delicious:(");
@@ -46,13 +45,11 @@ namespace swd_projekt
 
             Location office = new Location(
                 2,
-                true,
                 "The office",
                 "You're in the office. There is nothing.");
 
             Location coolingRoom = new Location(
                 3,
-                false,
                 "The cooling room",
                 "You're in the cooling room. It's very cold. You can see something to eat and drink. Furthermore you're noticing a flare");
             Items meat = new Items("frozen meat", "Oh, is looks so good. I don't know when I had the last time meat to eat.");
@@ -66,7 +63,6 @@ namespace swd_projekt
 
             Location backyard = new Location(
                 4,
-                false,
                 "The backyard",
                 "You're at backyard. It's cold outside and it snows. there are fences around you.");
 
@@ -85,15 +81,14 @@ namespace swd_projekt
 
             return parkingSpot;
         }
-
         public static void AvatarCurrentLocation(Location location)
         {
             Avatar.playerLocation = location.roomNumber;
-            // RoomCheck();
         }
         public static void EnemyRandomLocation(Location location)
         {
-            if (Enemy.dead == false)
+
+            if (infos.dead == false)
             {
                 Random rnd = new Random();
                 double randomRoomNumber = rnd.NextDouble();
@@ -109,18 +104,25 @@ namespace swd_projekt
                 int NewrandomRoomNumber = Convert.ToInt32(randomRoomNumber);
                 Enemy.randomLocation = NewrandomRoomNumber;
             }
-            else
-            {
-                Enemy.randomLocation = -1;
-            }
-
-
         }
         public static void RoomCheck()
         {
             if (Avatar.playerLocation == Enemy.randomLocation)
             {
-                Attack.Fight();
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine("The " + infos.name + "is in the house - You have fight!");
+                Console.WriteLine("What do you want to do? - Attack with (a)!");
+            }
+        }
+        public static void LookThroughRoom(Location location)
+        {
+            if (location.items.Count > 0)
+            {
+                Console.WriteLine("In the room you can see these items: ");
+                foreach (var item in location.items)
+                {
+                    Console.WriteLine(item + " - ");
+                }
             }
         }
         public static void DescribeRoom(Location location)
@@ -133,14 +135,7 @@ namespace swd_projekt
             Console.WriteLine();
             Console.WriteLine(location.description);
             Console.ResetColor();
-            if (location.items.Count > 0)
-            {
-                Console.WriteLine("In the room you can see these items: ");
-                foreach (var item in location.items)
-                {
-                    Console.WriteLine(item + " - ");
-                }
-            }
+
             //win
             if (location.title == "The backyard")
             {
@@ -154,9 +149,6 @@ namespace swd_projekt
                     Console.WriteLine("You can't get over the fences. Search for an Item that could help you!");
                 }
             }
-
-            Console.WriteLine(Avatar.playerLocation);
-            Console.WriteLine("test random " + Enemy.randomLocation);
             RoomCheck();
             Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");
         }
