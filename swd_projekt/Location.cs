@@ -9,13 +9,11 @@ namespace swd_projekt
         public string description;
         public int roomNumber;
         public List<Items> items = new List<Items>();
-        public  Location north;
-        public  Location east;
+        public Location north;
+        public Location east;
         public Location south;
         public Location west;
-        public static Enemy infos = Enemy.EnemySetUp();
 
-        public static Avatar avatarInfos = Avatar.AvatarSetUp();
 
         public Location(int _roomNumber, string _title, string _description)
         {
@@ -24,7 +22,6 @@ namespace swd_projekt
             description = _description;
 
         }
-
         public static Location MapSetUp()
         {
             Location parkingSpot = new Location(
@@ -52,7 +49,7 @@ namespace swd_projekt
             Items meat = new Items("meat", "Oh, is looks so good. I don't know when I had the last time meat to eat.");
             Items milk = new Items("milk", "It looks old");
             Items plier = new Items("plier", "Hmm..I could need it..");
-            Items screwdriver = new Items("rusty screwdriver", "It looks old. I don't know if its useable.");
+            Items screwdriver = new Items("screwdriver", "It looks old. I don't know if its useable.");
 
             Location backyard = new Location(
                 4,
@@ -81,37 +78,14 @@ namespace swd_projekt
 
             return parkingSpot;
         }
-
-        public static void AvatarCurrentLocation(Location location)
-        {
-            Avatar.playerLocation = location.roomNumber;
-        }
-        public static void EnemyRandomLocation(Location location)
-        {
-
-            if (infos.dead == false)
-            {
-                Random rnd = new Random();
-                double randomRoomNumber = rnd.NextDouble();
-                randomRoomNumber = ((randomRoomNumber * (3.0 - 2.0)) + 2.0);
-                if (randomRoomNumber > 1.49)
-                {
-                    Math.Ceiling(randomRoomNumber);
-                }
-                else
-                {
-                    Math.Floor(randomRoomNumber);
-                }
-                int NewrandomRoomNumber = Convert.ToInt32(randomRoomNumber);
-                Enemy.randomLocation = NewrandomRoomNumber;
-            }
-        }
+      
+        
         public static void RoomCheck()
         {
-            if (Avatar.playerLocation == Enemy.randomLocation)
+            if (Controls.avatarInfos.playerLocation == Enemy.randomLocation)
             {
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.WriteLine("The " + infos.name + "is in the house - You have fight!");
+                Console.WriteLine("The " + Controls.enemyInfos.name + "is in the house - You have fight!");
                 Console.WriteLine("What do you want to do? - Attack with (a)!");
             }
         }
@@ -136,21 +110,10 @@ namespace swd_projekt
             Console.WriteLine();
             Console.WriteLine(location.description);
             Console.ResetColor();
-
-            //win
-            if (location.title == "The backyard")
-            {
-                if (Avatar.inventory.Exists(x => x.title == "plier"))
-                {
-                    Console.WriteLine("You have won!");
-                    Environment.Exit(0);
-                }
-                else
-                {
-                    Console.WriteLine("You can't get over the fences. Search for an Item that could help you!");
-                }
-            }
             RoomCheck();
+            //win
+            // Win.checkWin(location);
+            
             Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");
         }
     }
